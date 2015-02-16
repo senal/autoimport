@@ -1,0 +1,5 @@
+H:\au.workspace\autoimport\BorderExpress.AutoImport.Dal\bin\Debug\BorderExpress.AutoImport.Dal.dll
+H:\au.workspace\autoimport\BorderExpress.AutoImport.Dal\bin\Debug\BorderExpress.AutoImport.Dal.pdb
+H:\au.workspace\autoimport\BorderExpress.AutoImport.Dal\obj\Debug\BorderExpress.AutoImport.Dal.csprojResolveAssemblyReference.cache
+H:\au.workspace\autoimport\BorderExpress.AutoImport.Dal\obj\Debug\BorderExpress.AutoImport.Dal.dll
+H:\au.workspace\autoimport\BorderExpress.AutoImport.Dal\obj\Debug\BorderExpress.AutoImport.Dal.pdb

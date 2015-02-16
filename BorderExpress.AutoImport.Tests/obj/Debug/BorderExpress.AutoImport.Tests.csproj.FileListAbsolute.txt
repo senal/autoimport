@@ -1,0 +1,4 @@
+H:\au.workspace\autoimport\BorderExpress.AutoImport.Tests\bin\Debug\BorderExpress.AutoImport.Tests.dll
+H:\au.workspace\autoimport\BorderExpress.AutoImport.Tests\bin\Debug\BorderExpress.AutoImport.Tests.pdb
+H:\au.workspace\autoimport\BorderExpress.AutoImport.Tests\obj\Debug\BorderExpress.AutoImport.Tests.dll
+H:\au.workspace\autoimport\BorderExpress.AutoImport.Tests\obj\Debug\BorderExpress.AutoImport.Tests.pdb
