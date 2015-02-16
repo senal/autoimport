@@ -28,3 +28,10 @@ obj/
 *.sdf
 *.mdf
 *.bak
+/BorderExpress.AutoImport.Web/Scripts
+
+/BorderExpress.AutoImport.Web/bin
+/packages
+
+/BorderExpress.AutoImport.Web/Content/themes
+/BorderExpress.AutoImport.Web/obj

@@ -3,3 +3,8 @@ H:\au.workspace\autoimport\BorderExpress.AutoImport.Core\bin\Debug\BorderExpress
 H:\au.workspace\autoimport\BorderExpress.AutoImport.Core\obj\Debug\BorderExpress.AutoImport.Core.csprojResolveAssemblyReference.cache
 H:\au.workspace\autoimport\BorderExpress.AutoImport.Core\obj\Debug\BorderExpress.AutoImport.Core.dll
 H:\au.workspace\autoimport\BorderExpress.AutoImport.Core\obj\Debug\BorderExpress.AutoImport.Core.pdb
+D:\GitHub Codes\autoimport\BorderExpress.AutoImport.Core\bin\Debug\BorderExpress.AutoImport.Core.dll
+D:\GitHub Codes\autoimport\BorderExpress.AutoImport.Core\bin\Debug\BorderExpress.AutoImport.Core.pdb
+D:\GitHub Codes\autoimport\BorderExpress.AutoImport.Core\obj\Debug\BorderExpress.AutoImport.Core.dll
+D:\GitHub Codes\autoimport\BorderExpress.AutoImport.Core\obj\Debug\BorderExpress.AutoImport.Core.pdb
+D:\GitHub Codes\autoimport\BorderExpress.AutoImport.Core\obj\Debug\BorderExpress.AutoImport.Core.csprojResolveAssemblyReference.cache
