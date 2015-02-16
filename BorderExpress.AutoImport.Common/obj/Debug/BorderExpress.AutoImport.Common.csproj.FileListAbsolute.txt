@@ -1,5 +1,0 @@
-H:\au.workspace\autoimport\BorderExpress.AutoImport.Common\bin\Debug\BorderExpress.AutoImport.Common.dll
-H:\au.workspace\autoimport\BorderExpress.AutoImport.Common\bin\Debug\BorderExpress.AutoImport.Common.pdb
-H:\au.workspace\autoimport\BorderExpress.AutoImport.Common\obj\Debug\BorderExpress.AutoImport.Common.csprojResolveAssemblyReference.cache
-H:\au.workspace\autoimport\BorderExpress.AutoImport.Common\obj\Debug\BorderExpress.AutoImport.Common.dll
-H:\au.workspace\autoimport\BorderExpress.AutoImport.Common\obj\Debug\BorderExpress.AutoImport.Common.pdb
