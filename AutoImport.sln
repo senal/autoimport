@@ -15,8 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BorderExpress.AutoImport.Te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB Scripts", "DB Scripts", "{61F8BDFC-B4C5-4D2F-B239-6AC417C4A6FE}"
 	ProjectSection(SolutionItems) = preProject
-		DataBase.sql = DataBase.sql
-		MasterData.sql = MasterData.sql
+		DB Scripts\DataBase.sql = DB Scripts\DataBase.sql
+		DB Scripts\MasterData.sql = DB Scripts\MasterData.sql
 	EndProjectSection
 EndProject
 Global
