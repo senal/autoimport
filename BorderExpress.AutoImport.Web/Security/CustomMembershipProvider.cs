@@ -1,6 +1,11 @@
-﻿using System;
+﻿using BorderExpress.AutoImport.Common;
+using BorderExpress.AutoImport.Core;
+using BorderExpress.AutoImport.Core.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using WebMatrix.WebData;
 
@@ -8,6 +13,8 @@ namespace BorderExpress.AutoImport.Web.Security
 {
     public class CustomMembershipProvider : ExtendedMembershipProvider
     {
+        IUserService _userService;
+
         public override bool ConfirmAccount(string accountConfirmationToken)
         {
             throw new NotImplementedException();
@@ -217,7 +224,15 @@ namespace BorderExpress.AutoImport.Web.Security
 
         public override bool ValidateUser(string username, string password)
         {
-            throw new NotImplementedException();
+            _userService = new UserService();
+            var user = _userService.GetUser(username);
+
+            if (user != null && SaltedHash.Verify(user.Salt, user.Hash, password))
+            {
+                return true;
+            }
+
+            return false;            
         }
     }
 }

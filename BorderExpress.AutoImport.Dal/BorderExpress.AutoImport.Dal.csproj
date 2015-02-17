@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
-    <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserRepository.cs" />
   </ItemGroup>
@@ -55,6 +54,10 @@
     <ProjectReference Include="..\BorderExpress.AutoImport.Common\BorderExpress.AutoImport.Common.csproj">
       <Project>{33ceb789-2be4-4d86-b3da-449eaecfa179}</Project>
       <Name>BorderExpress.AutoImport.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BorderExpress.AutoImport.Models\BorderExpress.AutoImport.Models.csproj">
+      <Project>{78a5bcbb-80dd-46ed-a02b-b2f492be926e}</Project>
+      <Name>BorderExpress.AutoImport.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

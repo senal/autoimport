@@ -211,6 +211,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Scripts\jquery-2.1.3.min.map" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -223,6 +224,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BorderExpress.AutoImport.Common\BorderExpress.AutoImport.Common.csproj">
+      <Project>{33ceb789-2be4-4d86-b3da-449eaecfa179}</Project>
+      <Name>BorderExpress.AutoImport.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BorderExpress.AutoImport.Core\BorderExpress.AutoImport.Core.csproj">
       <Project>{e11fe0a4-20d5-42a0-a2b8-2e386160e949}</Project>
       <Name>BorderExpress.AutoImport.Core</Name>

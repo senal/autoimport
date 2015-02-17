@@ -8,10 +8,15 @@ using System.Threading.Tasks;
 
 namespace BorderExpress.AutoImport.Models
 {
+    public class User
+    {
+        public string UserName { get; set; }
+        public string Hash { get; set; }
+        public string Salt { get; set; }
+    }
+
     public class UserProfile
     {
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
     }

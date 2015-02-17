@@ -9,7 +9,6 @@ using WebMatrix.WebData;
 namespace BorderExpress.AutoImport.Web.Controllers
 {
     [Authorize]
-    //[InitializeSimpleMembership]
     public class AccountController : BaseController
     {
         //
