@@ -42,5 +42,11 @@ namespace BorderExpress.AutoImport.Dal
             else
                 return null;
         }
+
+
+        public User GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
