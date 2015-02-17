@@ -10,6 +10,7 @@ namespace BorderExpress.AutoImport.Dal.Interfaces
         where T: class, new()
     {
         IList<T> GetAll();
+        T GetById(int id);
         IQueryable<T> GetQueryable();
     }
 }
