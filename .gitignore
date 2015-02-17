@@ -35,3 +35,15 @@ obj/
 
 /BorderExpress.AutoImport.Web/Content/themes
 /BorderExpress.AutoImport.Web/obj
+/BorderExpress.AutoImport.Core/obj
+/BorderExpress.AutoImport.Dal/obj
+
+/BorderExpress.AutoImport.Tests/obj
+/BorderExpress.AutoImport.Web/Content/bootstrap.css
+/BorderExpress.AutoImport.Web/Content/bootstrap.css.map
+/BorderExpress.AutoImport.Web/Content/bootstrap.min.css
+/BorderExpress.AutoImport.Web/Content/bootstrap-theme.css
+/BorderExpress.AutoImport.Web/Content/bootstrap-theme.css.map
+/BorderExpress.AutoImport.Web/Content/bootstrap-theme.min.css
+
+/BorderExpress.AutoImport.Web/fonts
