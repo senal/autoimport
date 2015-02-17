@@ -10,7 +10,7 @@ namespace BorderExpress.AutoImport.Web.Controllers
 {
     [Authorize]
     //[InitializeSimpleMembership]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         //
         // GET: /Account/Login
