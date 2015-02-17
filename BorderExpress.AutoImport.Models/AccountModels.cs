@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BorderExpress.AutoImport.Core
+namespace BorderExpress.AutoImport.Models
 {
     public class UserProfile
     {

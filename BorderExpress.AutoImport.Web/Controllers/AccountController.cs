@@ -1,4 +1,4 @@
-﻿using BorderExpress.AutoImport.Core;
+﻿using BorderExpress.AutoImport.Models;
 using Microsoft.Web.WebPages.OAuth;
 using System;
 using System.Transactions;

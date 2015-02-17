@@ -227,6 +227,10 @@
       <Project>{e11fe0a4-20d5-42a0-a2b8-2e386160e949}</Project>
       <Name>BorderExpress.AutoImport.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BorderExpress.AutoImport.Models\BorderExpress.AutoImport.Models.csproj">
+      <Project>{78a5bcbb-80dd-46ed-a02b-b2f492be926e}</Project>
+      <Name>BorderExpress.AutoImport.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

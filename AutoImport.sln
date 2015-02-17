@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB Scripts", "DB Scripts", 
 		DB Scripts\MasterData.sql = DB Scripts\MasterData.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BorderExpress.AutoImport.Models", "BorderExpress.AutoImport.Models\BorderExpress.AutoImport.Models.csproj", "{78A5BCBB-80DD-46ED-A02B-B2F492BE926E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{7755A66D-B2DC-4650-B70E-AB208ED1C0BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7755A66D-B2DC-4650-B70E-AB208ED1C0BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7755A66D-B2DC-4650-B70E-AB208ED1C0BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78A5BCBB-80DD-46ED-A02B-B2F492BE926E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A5BCBB-80DD-46ED-A02B-B2F492BE926E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A5BCBB-80DD-46ED-A02B-B2F492BE926E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A5BCBB-80DD-46ED-A02B-B2F492BE926E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
