@@ -24,6 +24,11 @@ namespace BorderExpress.AutoImport.Web.Controllers
         //
         // POST: /Account/Login
 
+        public ActionResult Manage()
+        {
+           return RedirectToAction("Index", "Home");
+        }
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
