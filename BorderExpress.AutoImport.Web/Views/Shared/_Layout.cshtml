@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/bootstrap")
 </head>
 <body>
    
             @RenderBody()
       
 
-    <footer>
+    @*<footer>
         <div class="content-wrapper">
             <div class="float-left">
             </div>
         </div>
-    </footer>
+    </footer>*@
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>

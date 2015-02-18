@@ -1,8 +1,13 @@
 ﻿#login {
     display: block;
-    font-size: .85em;
+    font-size: 16px;
     margin: 0 0 10px;
     text-align: right;
+}
+
+.login {
+width:400px !important;
+margin:150px auto !important;
 }
 
     #login a {
@@ -37,3 +42,6 @@
     height: 100px;
 }
 
+input[type="radio"], input[type="checkbox"] {
+    margin: 12px 0 0 !important;
+}
