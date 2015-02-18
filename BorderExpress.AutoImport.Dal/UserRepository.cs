@@ -12,15 +12,14 @@ namespace BorderExpress.AutoImport.Dal
 {
     public class UserRepository:IUserRepository
     {
-        private readonly IConfiguration _configuration;
         private IDbConnection _db = new SqlConnection();
 
-        public UserRepository(IConfiguration configuration)
+        public UserRepository(IProjectConfiguration projectConfiguration)
         {
-            //if(_configuration==null)
-            //    throw new ArgumentNullException("configuration");
-            //_configuration = configuration;
-            _db.ConnectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=AutoImport;Integrated Security=True";
+            if (projectConfiguration == null)
+                throw new ArgumentNullException("ProjectConfiguration is null in " + this.GetType().Name);
+
+            _db.ConnectionString = projectConfiguration.ConnectionString();
         }
 
         public IList<User> GetAll()

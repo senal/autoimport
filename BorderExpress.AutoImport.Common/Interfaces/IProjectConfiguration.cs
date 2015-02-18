@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BorderExpress.AutoImport.Common.Interfaces
 {
-    public interface IConfiguration
+    public interface IProjectConfiguration
     {
         string ConnectionString();
     }
