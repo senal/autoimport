@@ -22,12 +22,12 @@
             <div class="form-group form-group-login">
                 @*
                 <label>@Html.LabelFor(m => m.UserName)</label>*@
-                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control loginForm-input" })<span style="color: red; vertical-align: middle; padding: 3px; float: left; font-size: 15px;"> *</span>
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control loginForm-input" , @placeholder="Username" })<span style="color: red; vertical-align: middle; padding: 3px; float: left; font-size: 15px;"> *</span>
                 @Html.ValidationMessageFor(m => m.UserName)
             </div>
             <div class="form-group form-group-login">
                 @*<label for="exampleInputPassword1">@Html.LabelFor(m => m.Password)</label>*@
-                @Html.PasswordFor(m => m.Password, new { @class = "form-control loginForm-input" })<span style="color: red; vertical-align: middle; padding: 3px; float: left; font-size: 15px;"> *</span>
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control loginForm-input" , @placeholder="Password" })<span style="color: red; vertical-align: middle; padding: 3px; float: left; font-size: 15px;"> *</span>
                 @Html.ValidationMessageFor(m => m.Password)
             </div>
             <div class="form-group form-group-login">
