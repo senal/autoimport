@@ -7,60 +7,42 @@
 
 @*<hgroup class="title">
     <h1>@ViewBag.Title.</h1>
-</hgroup>*@
+</hgroup>
+*@
 
-<section id="loginForm" class="login">
-
-    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+<section id="loginForm" >
+   @* @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl}))*@
+ @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
 
-        @*<fieldset>
-
-                <ol>
-                    <li>
-                        @Html.LabelFor(m => m.UserName)
-                        @Html.TextBoxFor(m => m.UserName)
-                        @Html.ValidationMessageFor(m => m.UserName)
-                    </li>
-                    <li>
-                        @Html.LabelFor(m => m.Password)
-                        @Html.PasswordFor(m => m.Password)
-                        @Html.ValidationMessageFor(m => m.Password)
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(m => m.RememberMe)
-                        @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-                    </li>
-                </ol>
-                <input type="submit" value="Log in" />
-            </fieldset>*@
-
-        <fieldset>
-        <legend>Log in Form</legend>
-        <form>
-            <div class="form-group">
-                <label>@Html.LabelFor(m => m.UserName)</label>
-                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+    
+    
+            <div class="form-group form-group-login">
+                @*
+                <label>@Html.LabelFor(m => m.UserName)</label>*@
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control loginForm-input" })<span style="color: red; vertical-align: middle; padding: 3px; float: left; font-size: 15px;"> *</span>
                 @Html.ValidationMessageFor(m => m.UserName)
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">@Html.LabelFor(m => m.Password)</label>
-                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            <div class="form-group form-group-login">
+                @*<label for="exampleInputPassword1">@Html.LabelFor(m => m.Password)</label>*@
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control loginForm-input" })<span style="color: red; vertical-align: middle; padding: 3px; float: left; font-size: 15px;"> *</span>
                 @Html.ValidationMessageFor(m => m.Password)
             </div>
-
-            <div class="checkbox">
+            <div class="form-group form-group-login">
+                <input type="submit" class="btn btn-login loginForm-input" value="Log in">
+            </div>
+            <div class="form-group form-group-login">
                 <label>
                     @Html.CheckBoxFor(m => m.RememberMe)
                     @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
                 </label>
             </div>
-            <button type="submit" class="btn btn-default">Log in</button>
-        </form>
-            </fieldset>
-                }
+
+      
+
+    }
 </section>
 
 @section Scripts {

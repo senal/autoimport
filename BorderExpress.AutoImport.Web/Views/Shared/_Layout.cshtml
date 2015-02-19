@@ -4,17 +4,33 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/bootstrap")
 </head>
-<body>
+<body class="layoutBody">
+ <div class="container body-content-login">
+<div class="layoutHeader">
+            <a href="#">
+
+                <img src="~/images/Border_Express_logo_Horizontal.png" style="width:300px;" />
+            </a>
+        </div>
+ <div class="row">
+<div class="col-md-4 fl-none">
+   @RenderBody()
+</div>
+</div>
+
+<hr>
+        <footer>
+            <p class="footer">&copy; 2015 - Auto Import</p>
+        </footer>
+</div>
+
+
+
    
-            @RenderBody()
+          
       
 
-    @*<footer>
-        <div class="content-wrapper">
-            <div class="float-left">
-            </div>
-        </div>
-    </footer>*@
+    
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
