@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestDBSetup.cs" />
+    <Compile Include="UnitTests\ConfigurationSetupServiceTest.cs" />
     <Compile Include="UnitTests\UserServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +63,10 @@
     <ProjectReference Include="..\BorderExpress.AutoImport.Core\BorderExpress.AutoImport.Core.csproj">
       <Project>{e11fe0a4-20d5-42a0-a2b8-2e386160e949}</Project>
       <Name>BorderExpress.AutoImport.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BorderExpress.AutoImport.Dal\BorderExpress.AutoImport.Dal.csproj">
+      <Project>{b9387e28-1ff6-4169-a9bb-fe24519de5ff}</Project>
+      <Name>BorderExpress.AutoImport.Dal</Name>
     </ProjectReference>
     <ProjectReference Include="..\BorderExpress.AutoImport.Models\BorderExpress.AutoImport.Models.csproj">
       <Project>{78a5bcbb-80dd-46ed-a02b-b2f492be926e}</Project>

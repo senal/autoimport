@@ -14,5 +14,6 @@ namespace BorderExpress.AutoImport.Core.Interfaces
         void Create(ConfigurationSetup configurationSetup);
         void Edit(ConfigurationSetup configurationSetup);
         void Delete(int id);
+        void Delete(ConfigurationSetup configurationSetup);
     }
 }

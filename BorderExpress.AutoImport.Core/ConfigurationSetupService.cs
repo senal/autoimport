@@ -14,12 +14,12 @@ namespace BorderExpress.AutoImport.Core
 {
     public class ConfigurationSetupService : IConfigurationSetupService
     {
-        private readonly ConfigurationSetupRepository _configurationSetupRepository;
+        private readonly IConfigurationSetupRepository _configurationSetupRepository;
 
-        public ConfigurationSetupService()
+        public ConfigurationSetupService(IConfigurationSetupRepository configurationSetupRepository)
         {
              IProjectConfiguration projectConfiguration = new ProjectConfiguration();
-            _configurationSetupRepository = new ConfigurationSetupRepository(projectConfiguration);
+            _configurationSetupRepository = configurationSetupRepository; // new ConfigurationSetupRepository(projectConfiguration);
         }
 
         public IList<ConfigurationSetup> GetAll()
@@ -47,6 +47,11 @@ namespace BorderExpress.AutoImport.Core
         public void Delete(int id)
         {
             _configurationSetupRepository.Delete(id);
+        }
+
+        public void Delete(ConfigurationSetup configurationSetup)
+        {
+            _configurationSetupRepository.Delete(configurationSetup.Id);
         }
     }
 }
