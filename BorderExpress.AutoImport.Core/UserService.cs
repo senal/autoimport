@@ -15,14 +15,9 @@ namespace BorderExpress.AutoImport.Core
     public class UserService : IUserService
     {
         private IUserRepository _userRepository;
-        private IProjectConfiguration _projectConfiguration;
 
         public UserService()
         {
-           
-            //if (userRepository == null)
-            //    throw new ArgumentNullException("UserRepository is null in " + this.GetType().Name);
-            
             IProjectConfiguration projectConfiguration = new ProjectConfiguration();
             _userRepository = new UserRepository(projectConfiguration);
         }
