@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrap")
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,300,700' rel='stylesheet' type='text/css'> @*google font*@
+</head>
+<body>
+
+<!-- ----------------------Top navigation starts-------------- -->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="~/images/Border_Express_logo_Horizontal.png" width="200" /></a> 
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Hello username</a></li>
+                    <li><a href="#">Logout</a></li>
+                   @* <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>*@
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+
+<!-- ----------------------Top navigation ends-------------- -->
+
+ <div class="container-fluid body-content">
+<div class="row opened " id="wrapper">
+
+<!-- ----------------------Sidebar navigation starts-------------- -->
+
+<div class="col-xs-6 col-md-3 no-padding" id="sidebar-pane">
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper" style="height: 876px;">
+                    <div class="tab-in" id="sidebar-pane-tab">
+                        <ul role="tablist" class="nav nav-tabs">
+                            <li id="SystemTabLi" class="SideBarTabsLi active"><a data-toggle="tab" role="tab" class="SideBarTabs" href="#SystemTab">System</a></li>
+                            <li id="BatchesTabLi" class="SideBarTabsLi "><a data-toggle="tab" role="tab" class="SideBarTabs" href="#BatchesTab">Batches</a></li>
+                            <li id="SetupTabLi" class="SideBarTabsLi"><a data-toggle="tab" role="tab" class="SideBarTabs" href="#SetupTab">Setup</a></li>
+                        </ul>
+                    </div>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div id="SystemTab" class="tab-pane home-sidebar-tab-pane active">
+                            <div class="panel-heading">
+                                <h3 class="panel-title collapse-pointer " data-target="#sidebar-search" data-toggle="collapse">System links</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="sidebar-link-container">
+                                    <a class="sidebar-option-link" href="#"> <span><span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Inbox</span></a>
+                                    <a class="sidebar-option-link" href="#"> <span> <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Target folder</span></a>
+                                    <a class="sidebar-option-link" href="#"> <span><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Temp Tables</span></a>
+                                    <a class="sidebar-option-link" href="#"> <span><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Scratchpad</span></a>
+                                    <a class="sidebar-option-link" href="#"> <span><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Transfer Interface</span></a>
+                                    <a class="sidebar-option-link" href="#"> <span> <span class="glyphicon glyphicon-import" aria-hidden="true"></span> Import Log</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="BatchesTab" class="tab-pane home-sidebar-tab-pane">
+                            <div class="panel-heading">
+                                <h3 class="panel-title collapse-pointer " data-target="#sidebar-search" data-toggle="collapse">Batches links</h3>
+                            </div>
+                        </div>
+                        <div id="SetupTab" class="tab-pane home-sidebar-tab-pane ">
+                            <div class="panel-heading">
+                                <h3 class="panel-title collapse-pointer " data-target="#sidebar-search" data-toggle="collapse">Configuration</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="sidebar-link-container">
+                                    <a class="sidebar-option-link" href="#"> <span><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Setup</span></a>
+                                    <a class="sidebar-option-link" href="#"> <span> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Checkpoints</span></a>
+                                    <a class="sidebar-option-link" href="#"> <span><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Error messages</span></a>
+                                    <a class="sidebar-option-link" href="#"> <span><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> Charge Unit XRef</span></a>
+                                </div>
+                            </div>
+                            <div class="panel-heading">
+                                <h3 class="panel-title collapse-pointer " data-target="#sidebar-search" data-toggle="collapse">Import</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="sidebar-link-container">
+                                    <a class="sidebar-option-link" href="#"> <span><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Fields</span></a>
+                                    <a class="sidebar-option-link" href="#"> <span> <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Templates</span></a>
+                                    <a class="sidebar-option-link" href="#"> <span><span class=" glyphicon glyphicon-file" aria-hidden="true"></span> File Extensions</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="sidebar-container">
+                    <div class="btn-sidebar-toggle opened "><span class="glyphicon glyphicon-menu-left" aria-hidden="true"> </span></div>
+                </div>
+
+            </div>
+
+<!-- ----------------------Sidebar navigation ends-------------- -->
+
+<!-- ----------------------Body content starts ----------------- -->
+
+<div id="body-pane">
+                <div id="page-content-wrapper">
+ @RenderBody()
+                </div>
+                <hr>
+                <footer>
+                    <p class="footer">&copy; 2015 - Auto Import</p>
+                </footer>
+            </div>
+
+<!-- ----------------------Body content ends ----------------- -->
+ </div>
+
+</div>
+    
+      
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+  <script type="text/javascript">
+
+        //if ($.cookie('sidebar-pref') == 'closed') {
+        //    $('.sidebar-container').css('left', '39px');
+        //    $('#body-pane').css('width', '98%');
+        //    $('#sidebar-pane').css('margin-left', '-18%');
+        //}
+
+        $(document).ready(function () {
+            $('.btn-sidebar-toggle').click(function () {
+                if ($(this).hasClass('opened')) {
+                    //$.cookie('sidebar-pref', 'closed', { path: '/', expires: 30 });
+                    $(this).removeClass('opened').addClass('closed');
+                    $('.sidebar-container').animate({ 'left': '39px' }, 200, function () { });
+                    $('#body-pane').animate({ 'width': '98%' }, 350);
+                    $('#body-pane').animate({ 'margin-left': '30px' }, 250);
+                    $('#sidebar-pane').animate({ 'margin-left': '-18%' }, 350);
+                    $(this).find('.glyphicon ').removeClass(' glyphicon-menu-left');
+                    $(this).find('.glyphicon ').addClass(' glyphicon-menu-right');
+                    $('.sidebar-container ').addClass(' sidebar-container-closed');
+                } else {
+                    // $.cookie('sidebar-pref', 'opened', { path: '/', expires: 30 });
+                    $(this).removeClass('closed');
+                    $(this).addClass('opened');
+                    $('#body-pane').animate({ 'width': '80%' }, 340);
+                    $('#body-pane').animate({ 'margin-left': '20%' }, 250);
+                    $('.sidebar-container').animate({ 'left': '20%' }, 250, function () { });
+                    $('#sidebar-pane').animate({ 'margin-left': '0%' }, 350);
+                    $(this).find('.glyphicon ').addClass(' glyphicon-menu-left');
+                    $(this).find('.glyphicon ').removeClass(' glyphicon-menu-right');
+                    $('.sidebar-container ').removeClass(' sidebar-container-closed');
+                }
+            });
+
+            var v_height = $(document).height();
+            $('#sidebar-wrapper').css('height', v_height);
+            //alert(v_height);
+        });
+    </script>
+</body>
+</html>
