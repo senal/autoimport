@@ -16,6 +16,13 @@ namespace BorderExpress.AutoImport.Dal
     {
         private IDbConnection _db = new SqlConnection();
 
+        public IDbConnection DbConnection
+        {
+            get
+            {
+                return _db;
+            }
+        }
         public ConfigurationSetupRepository(IProjectConfiguration projectConfiguration)
         {
             if (projectConfiguration == null)
@@ -55,7 +62,7 @@ namespace BorderExpress.AutoImport.Dal
 
         public void Edit(ConfigurationSetup configurationSetup)
         {
-            string query = "UPDATE [dbo].[tblConfiguration] [fldOptionName] = @fldOptionName,[fldSetting] = @fldSetting," +
+            string query = "UPDATE [dbo].[tblConfiguration] ([fldOptionName] = @fldOptionName,[fldSetting] = @fldSetting," +
                            "[fldVersion] =  @fldVersion ,[fldDescription]  = @fldDescription ,[fldLastUpd] =  @fldLastUpd"
                            + "WHERE id = @id";
             _db.Execute(query, new

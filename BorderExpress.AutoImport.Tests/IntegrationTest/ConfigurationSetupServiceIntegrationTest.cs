@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using BorderExpress.AutoImport.Core;
 using BorderExpress.AutoImport.Dal;
 using BorderExpress.AutoImport.Models;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
+using System.Transactions;
 
 namespace BorderExpress.AutoImport.Tests.IntegrationTest
 {
@@ -39,16 +40,64 @@ namespace BorderExpress.AutoImport.Tests.IntegrationTest
         [Test]
         public void Create_Should_IncreaseDataCount()
         {
+                    //Arrange
+                    int countBeforeCreate = _configurationSetupService.GetAll().Count;
+                    ConfigurationSetup configurationSetup = TestData.GetConfigurationSetupWithoutId();
+
+                    //Act 
+                    _configurationSetupService.Create(configurationSetup);
+                    int countAfterCreate = _configurationSetupService.GetAll().Count;
+
+                    //Assert
+                    Assert.IsTrue(countBeforeCreate + 1 == countAfterCreate);
+        }
+
+        [Test]
+        public void Delete_Should_DecreaseDataCount()
+        {
             //Arrange
-            int countBeforeCreate = _configurationSetupService.GetAll().Count;
-            ConfigurationSetup configurationSetup = TestData.GetConfigurationSetupWithoutId();
+            IList<ConfigurationSetup> resultList = _configurationSetupService.GetAll();
+            int countBeforeDelete = resultList.Count;
 
             //Act 
-            _configurationSetupService.Create(configurationSetup);
-            int countAfterCreate = _configurationSetupService.GetAll().Count;
+            _configurationSetupService.Delete(resultList.Last().Id);
+            int countAfterDelete = _configurationSetupService.GetAll().Count;
 
             //Assert
-            Assert.IsTrue(countAfterCreate + 1 == countAfterCreate);
+            Assert.IsTrue(countBeforeDelete - 1 == countAfterDelete);
+        }
+
+        [Test]
+        public void GetById_Should_ReturnElement()
+        {
+            //Arrange
+            ConfigurationSetup configurationSetupToCreate = TestData.GetConfigurationSetupWithoutId();
+            _configurationSetupService.Create(configurationSetupToCreate);
+            IList<ConfigurationSetup> resultList = _configurationSetupService.GetAll();
+
+            //Act 
+            ConfigurationSetup result = _configurationSetupService.GetById(resultList.Last().Id);
+
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(configurationSetupToCreate.fldDescription, result.fldDescription);
+        }
+
+        [Test]
+        public void Edit_Should_UpdateElement()
+        {
+            //Arrange
+            IList<ConfigurationSetup> resultList = _configurationSetupService.GetAll();
+            ConfigurationSetup configurationSetupEdit = resultList.Last();
+            string descriptionBeforeEdit = configurationSetupEdit.fldDescription;
+            configurationSetupEdit.fldDescription = configurationSetupEdit.fldDescription + " edited";
+
+            //Act 
+           _configurationSetupService.Edit(configurationSetupEdit);
+
+            //Assert
+            string descriptionAfterEdit = _configurationSetupService.GetAll().Last().fldDescription;
+            Assert.AreEqual(descriptionBeforeEdit + " edited", descriptionAfterEdit);
         }
     }
 }
