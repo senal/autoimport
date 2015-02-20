@@ -10,5 +10,158 @@
     @Html.Partial("_LoginPartial")
 </div>
 <hr />*@
+@{
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
 
 
+                    <div class="bredcrumb" id="page-heading">
+                        Template Setup
+                    </div>
+                    <div class="body-content-container">
+
+                        <div class="row">
+                            <form>
+                                <div class="panel-default-new">
+
+                                    <div class="panel-default-new-heading">
+                                        <h3>Template #0333</h3>
+                                    </div>
+                                    <div class="col-md-10">
+
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="panel-default-new">
+
+                                                    <div class="panel-data-list-body">
+
+                                                        <div class="form-group panel-default-new-row">
+                                                            <label>Template Name</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                        <div class="form-group panel-default-new-row">
+                                                            <label>Customer</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                        <div class="form-group panel-default-new-row">
+                                                            <label>PDF Email</label>
+                                                            <input type="email" class="form-control">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="panel-default-new">
+                                                    <div class="panel-data-list-body">
+
+                                                        <div class="form-group panel-default-new-row">
+                                                            <label>Default Branch</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                        <div class="form-group panel-default-new-row">
+                                                            <label>File Type</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                        <div class="form-group panel-default-new-row">
+                                                            <label>Duplicates</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group panel-default-new-row">
+                                            <label>Active</label>
+                                            <input class="check-box" type="checkbox">
+                                        </div>
+                                        <div class="form-group panel-default-new-row">
+                                            <label>Convert Code</label>
+                                            <input class="check-box" type="checkbox">
+                                        </div>
+                                        <div class="form-group panel-default-new-row">
+                                            <label>Merge Items</label>
+                                            <input class="check-box" type="checkbox">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="tab-in" id="body-pane-tab">
+                                    <ul role="tablist" class="nav nav-tabs">
+                                        <li id="ImportFileTabLi" class="SideBarTabsLi active"><a data-toggle="tab" role="tab" class="SideBarTabs" href="#ImportFile">Import File</a></li>
+                                        <li id="FieldMappingTabLi" class="SideBarTabsLi "><a data-toggle="tab" role="tab" class="SideBarTabs" href="#FieldMapping">Field Mapping</a></li>
+                                        <li id="AlertsTabLi" class="SideBarTabsLi"><a data-toggle="tab" role="tab" class="SideBarTabs" href="#Alerts">Alerts</a></li>
+                                        <li id="ConvRulesTabLi" class="SideBarTabsLi "><a data-toggle="tab" role="tab" class="SideBarTabs" href="#ConvRules">Conv Rules</a></li>
+                                        <li id="ConIndicatorTabLi" class="SideBarTabsLi "><a data-toggle="tab" role="tab" class="SideBarTabs" href="#ConIndicator">Con Indicator</a></li>
+                                        <li id="LIIndicatorTabLi" class="SideBarTabsLi"><a data-toggle="tab" role="tab" class="SideBarTabs" href="#LIIndicator">LI Indicator</a></li>
+                                        <li id="SendRecXRefTabLi" class="SideBarTabsLi "><a data-toggle="tab" role="tab" class="SideBarTabs" href="#SendRecXRef">Send Rec XRef</a></li>
+                                        <li id="RecordTypesTabLi" class="SideBarTabsLi "><a data-toggle="tab" role="tab" class="SideBarTabs" href="#RecordTypes">Record Types</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Tab panes -->
+                                <div class="tab-content body-pane-tab-content">
+                                    <div id="ImportFile" class="tab-pane home-sidebar-tab-pane active">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title collapse-pointer " data-target="#sidebar-search" data-toggle="collapse">ImportFile</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            ImportFile
+                                        </div>
+                                    </div>
+                                    <div id="FieldMapping" class="tab-pane home-sidebar-tab-pane">
+                                        <div class="panel-body">
+                                            FieldMapping
+                                        </div>
+                                    </div>
+                                    <div id="Alerts" class="tab-pane home-sidebar-tab-pane ">
+
+                                        <div class="panel-body">
+                                            Alerts
+                                        </div>
+
+                                    </div>
+                                    <div id="ConvRules" class="tab-pane home-sidebar-tab-pane">
+                                        <div class="panel-body">
+                                            ConvRules
+                                        </div>
+                                    </div>
+                                    <div id="ConIndicator" class="tab-pane home-sidebar-tab-pane ">
+
+                                        <div class="panel-body">
+                                            ConIndicator
+                                        </div>
+
+                                    </div>
+                                    <div id="LIIndicator" class="tab-pane home-sidebar-tab-pane">
+                                        <div class="panel-body">
+                                            LIIndicator
+                                        </div>
+                                    </div>
+                                    <div id="SendRecXRef" class="tab-pane home-sidebar-tab-pane ">
+
+                                        <div class="panel-body">
+                                            SendRecXRef
+                                        </div>
+
+                                    </div>
+                                    <div id="RecordTypes" class="tab-pane home-sidebar-tab-pane">
+                                        <div class="panel-body">
+                                            RecordTypes
+                                        </div>
+                                    </div>
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
