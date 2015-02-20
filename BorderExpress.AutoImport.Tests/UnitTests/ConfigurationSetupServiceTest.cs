@@ -27,7 +27,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
         public void GetAll_sShould_Return_A_List()
         {
             //Arrange
-            IList<ConfigurationSetup> ExpectedConfigurationSetupList = GetConfigurationSetupList();
+            IList<ConfigurationSetup> ExpectedConfigurationSetupList = TestData.GetConfigurationSetupList();
            _mockRepository.Setup(a => a.GetAll()).Returns(ExpectedConfigurationSetupList);
 
             //Act
@@ -42,7 +42,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
         public void GetById_Should_Return_One()
         {
             //Arrange
-            ConfigurationSetup ExpectedConfigurationSetup = GetConfigurationSetup();
+            ConfigurationSetup ExpectedConfigurationSetup = TestData.GetConfigurationSetup();
             _mockRepository.Setup(a => a.GetById(1)).Returns(ExpectedConfigurationSetup);
 
             //Act
@@ -57,7 +57,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
         public void Create_Should_Call_RepositoryCreate_Method()
         {
             //Arrange
-            ConfigurationSetup ConfigurationSetupToCreated = GetConfigurationSetup();
+            ConfigurationSetup ConfigurationSetupToCreated = TestData.GetConfigurationSetup();
             _mockRepository.Setup(a => a.Create(ConfigurationSetupToCreated)).Callback(() =>{});
 
             //Act
@@ -71,7 +71,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
         public void Edit_Should_Call_RepositoryEdit_Method()
         {
             //Arrange
-            ConfigurationSetup ConfigurationSetupToEdit = GetConfigurationSetup();
+            ConfigurationSetup ConfigurationSetupToEdit = TestData.GetConfigurationSetup();
             _mockRepository.Setup(a => a.Edit(ConfigurationSetupToEdit)).Callback(() => { });
 
             //Act
@@ -98,7 +98,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
         public void Delete_Should_Call_RepositoryDelete_Method()
         {
             //Arrange
-            ConfigurationSetup ConfigurationSetupToDelete = GetConfigurationSetup();
+            ConfigurationSetup ConfigurationSetupToDelete = TestData.GetConfigurationSetup();
             _mockRepository.Setup(a => a.Delete(1)).Callback(() => { });
 
             //Act
@@ -108,38 +108,6 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
             _mockRepository.Verify(r => r.Delete(1), Times.Once());
         }
 
-         #region Private
-         private IList<ConfigurationSetup> GetConfigurationSetupList()
-         {
-            ConfigurationSetup setup;
-            IList<ConfigurationSetup> ConfigurationSetupList = new List<ConfigurationSetup>();
-
-            for (int index = 0; index < 5; index++)
-            {
-                setup = new ConfigurationSetup();
-                setup.Id = index + 1;
-                setup.fldDescription = "Description " + index;
-                setup.fldOptionName = "Option " + index;
-                setup.fldSetting = "Setting " + index;
-                setup.fldVersion = "Version " + index;
-                setup.fldLastUpd = DateTime.Today.AddDays(index);
-                ConfigurationSetupList.Add(setup);
-            }
-            return ConfigurationSetupList;
-        }
-
-         private ConfigurationSetup GetConfigurationSetup()
-         {
-            ConfigurationSetup setup = new ConfigurationSetup();
-            setup.Id = 1;
-            setup.fldDescription = "Description " ;
-            setup.fldOptionName = "Option ";
-            setup.fldSetting = "Setting ";
-            setup.fldVersion = "Version ";
-            setup.fldLastUpd = DateTime.Today;
-
-            return setup;
-         }
-         # endregion
+        
     }
 }

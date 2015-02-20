@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IntegrationTest\ConfigurationSetupServiceIntegrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestData.cs" />
     <Compile Include="TestDBSetup.cs" />
     <Compile Include="UnitTests\ConfigurationSetupServiceTest.cs" />
     <Compile Include="UnitTests\UserServiceTest.cs" />
