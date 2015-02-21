@@ -1,4 +1,6 @@
-﻿using BorderExpress.AutoImport.Models;
+﻿using BorderExpress.AutoImport.Core;
+using BorderExpress.AutoImport.Core.Interfaces;
+using BorderExpress.AutoImport.Models;
 using Microsoft.Web.WebPages.OAuth;
 using System;
 using System.Transactions;
@@ -11,9 +13,22 @@ namespace BorderExpress.AutoImport.Web.Controllers
     [Authorize]
     public class AccountController : BaseController
     {
-        //
-        // GET: /Account/Login
+        IUserService _userService;
+        public AccountController(IUserService userService)
+        {
+            _userService = userService;
+        }
+        
+        /*
+         [AllowAnonymous]
+        public void Print()
+        {
+            HttpContext.Response.Write(_userService.Print());
+        }
+        */
 
+         //
+         // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {

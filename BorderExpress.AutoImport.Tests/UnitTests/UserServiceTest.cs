@@ -1,5 +1,8 @@
-﻿using BorderExpress.AutoImport.Core;
+﻿using BorderExpress.AutoImport.Common.Interfaces;
+using BorderExpress.AutoImport.Core;
 using BorderExpress.AutoImport.Core.Interfaces;
+using BorderExpress.AutoImport.Dal;
+using BorderExpress.AutoImport.Dal.Interfaces;
 using BorderExpress.AutoImport.Models;
 using Moq;
 using NUnit.Framework;
@@ -14,12 +17,16 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
     [TestFixture]
     public class UserServiceTest
     {
-        private IUserService _userService;
+        private  IMock<IUserRepository> _userRepository;
+        private IMock<IProjectConfiguration> _config;
+        private UserService sut;
 
         [SetUp]
-        public void TestInit()
+        public void Setup()
         {
-            _userService = new UserService();
+            _userRepository = new Mock<IUserRepository>();
+            _config = new Mock<IProjectConfiguration>();
+             sut = new UserService(_userRepository.Object, _config.Object);
         }
 
         [Test]
@@ -31,7 +38,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
             mockUserService.Setup(a => a.GetUser(It.Is<string>(t => t == "Admin"))).Returns(new User() { UserName = "Admin", Hash = "CA3456C2CFA046E4CB5BB2DB", Salt = "x6bb0YW3PkCwqD=" });
 
             //Act
-            var result = _userService.GetUser(user.UserName);
+            var result = sut.GetUser(user.UserName);
 
             //Assert
             Assert.IsNull(result);
@@ -46,7 +53,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
             mockUserService.Setup(a => a.GetUser(It.Is<string>(t => t == "Admin"))).Returns(new User() { UserName = "Admin", Hash = "7C/tkVAhW6Q=", Salt = "x6bb0YW=" });
 
             //Act
-            var result = _userService.GetUser(user.UserName);
+            var result = sut.GetUser(user.UserName);
 
             //Assert
             Assert.IsNull(result);
@@ -61,7 +68,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
             mockUserService.Setup(a => a.GetUser(It.Is<string>(t => t == "Admin"))).Returns(new User() { UserName = "Admin", Hash = "CA3456C2CFA046E4CB5BB2DBF35353759814C657x6bb0YW3PkCwqD3Y28JBSsU0tXRh4mug7C/tkVAhW6Q=", Salt = "x6bg7C/tkVAhW6Q=" });
             
             //Act
-            var result = _userService.GetUser(user.UserName);
+            var result = sut.GetUser(user.UserName);
 
             //Assert
             Assert.IsNotNull(result);

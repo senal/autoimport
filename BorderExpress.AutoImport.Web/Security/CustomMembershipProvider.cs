@@ -13,7 +13,12 @@ namespace BorderExpress.AutoImport.Web.Security
 {
     public class CustomMembershipProvider : ExtendedMembershipProvider
     {
-        IUserService _userService;
+
+        public IUserService UserService { get; set; }
+
+        public CustomMembershipProvider()
+        {
+        }
 
         public override bool ConfirmAccount(string accountConfirmationToken)
         {
@@ -224,8 +229,7 @@ namespace BorderExpress.AutoImport.Web.Security
 
         public override bool ValidateUser(string username, string password)
         {
-            _userService = new UserService();
-            var user = _userService.GetUser(username);
+            var user = UserService.GetUser(username);
 
             if (user != null && SaltedHash.Verify(user.Salt, user.Hash, password))
             {

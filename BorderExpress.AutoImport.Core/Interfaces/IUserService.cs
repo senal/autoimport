@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace BorderExpress.AutoImport.Core.Interfaces
 {
-    public interface IUserService : IService
+    public interface IUserService
     {
         User GetUser(string username);
+       
+        //this is for test
+        string Print();
     }
 }

@@ -47,5 +47,11 @@ namespace BorderExpress.AutoImport.Dal
         {
             throw new NotImplementedException();
         }
+
+
+        public string Print()
+        {
+            return string.Format(" From {0}", this.GetType().Name);
+        }
     }
 }

@@ -15,5 +15,11 @@ namespace BorderExpress.AutoImport.Common
             }
             return _connectionString;
         }
+
+
+        public string Print()
+        {
+            return string.Format(" from IProjectConfiguration impl");
+        }
     }
 }

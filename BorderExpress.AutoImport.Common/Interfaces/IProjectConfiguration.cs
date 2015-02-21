@@ -9,5 +9,8 @@ namespace BorderExpress.AutoImport.Common.Interfaces
     public interface IProjectConfiguration
     {
         string ConnectionString();
+
+        //temp method to test DI
+        string Print();
     }
 }
