@@ -18,8 +18,10 @@ namespace BorderExpress.AutoImport.Core
 
         public ConfigurationParamService(IConfigurationParamRepository configurationSetupRepository)
         {
-             IProjectConfiguration projectConfiguration = new ProjectConfiguration();
-            _configurationSetupRepository = configurationSetupRepository; // new ConfigurationSetupRepository(projectConfiguration);
+            if (configurationSetupRepository == null)
+                throw new ArgumentNullException("configurationSetupRepository");
+           
+            _configurationSetupRepository = configurationSetupRepository;
         }
 
         public IList<ConfigurationParam> GetAll()
