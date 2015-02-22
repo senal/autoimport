@@ -110,7 +110,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
 
         
         [Test]
-        [Ignore("Temporary on hold: most probably will be removed after inspection. ")]
+        [Ignore("Temporarily on hold: most probably will be removed after inspection. ")]
         public void Should_Return_Null_For_Invalid_UserName()
         {
             /*
@@ -128,7 +128,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
         }
 
         [Test]
-        [Ignore("Temporary on hold: most probably will be removed after inspection. ")]
+        [Ignore("Temporarily on hold: most probably will be removed after inspection. ")]
         public void Should_Return_Password_For_Valid_UserName()
         {
             /*
