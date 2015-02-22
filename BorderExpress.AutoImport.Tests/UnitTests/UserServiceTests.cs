@@ -39,6 +39,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
 
             var actual = sut.ValidateUser(string.Empty, "xyz");
 
+            _userRepository.Verify(m => m.GetUser(It.IsAny<string>()), Times.Never);
             Assert.IsFalse(actual);
         }
 
@@ -50,6 +51,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
 
             var actual = sut.ValidateUser("user", string.Empty);
 
+            _userRepository.Verify(m => m.GetUser(It.IsAny<string>()), Times.Never);
             Assert.IsFalse(actual);
         }
 
@@ -61,6 +63,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
 
             var actual = sut.ValidateUser(string.Empty, string.Empty);
 
+            _userRepository.Verify(m => m.GetUser(It.IsAny<string>()), Times.Never);
             Assert.IsFalse(actual);
         }
 
