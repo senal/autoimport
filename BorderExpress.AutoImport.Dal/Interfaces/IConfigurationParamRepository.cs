@@ -8,10 +8,12 @@ using BorderExpress.AutoImport.Models;
 
 namespace BorderExpress.AutoImport.Dal.Interfaces
 {
-    public interface IConfigurationSetupRepository : IRepository<ConfigurationSetup>
+    public interface IConfigurationParamRepository 
     {
-        void Create(ConfigurationSetup configurationSetup);
-        void Edit(ConfigurationSetup configurationSetup);
+        IList<ConfigurationParam> GetAll();
+        ConfigurationParam Get(int id);
+        void Create(ConfigurationParam configurationSetup);
+        void Edit(ConfigurationParam configurationSetup);
         void Delete(int id);
     }
 }

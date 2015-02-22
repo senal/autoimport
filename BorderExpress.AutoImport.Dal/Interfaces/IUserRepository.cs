@@ -2,7 +2,7 @@
 using BorderExpress.AutoImport.Models;
 namespace BorderExpress.AutoImport.Dal.Interfaces
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IUserRepository 
     {
         User GetUser(string username);
 

@@ -14,12 +14,15 @@ namespace BorderExpress.AutoImport.Dal
     {
         private IDbConnection _db = new SqlConnection();
 
+        private readonly IProjectConfiguration _config;
+
         public UserRepository(IProjectConfiguration projectConfiguration)
         {
             if (projectConfiguration == null)
-                throw new ArgumentNullException("ProjectConfiguration is null in " + this.GetType().Name);
+                throw new ArgumentNullException("projectConfiguration");
+            _config = projectConfiguration;
 
-            _db.ConnectionString = projectConfiguration.ConnectionString();
+            _db.ConnectionString = _config.ConnectionString();
         }
 
         public IList<User> GetAll()
@@ -27,19 +30,20 @@ namespace BorderExpress.AutoImport.Dal
             throw new NotImplementedException();
         }
 
-        public IQueryable<User> GetQueryable()
-        {
-            throw new NotImplementedException();
-        }
-
         public User GetUser(string username)
         {
-            List<User> userList = this._db.Query<User>("SELECT UserProfile.UserName,webpages_Membership.Password as Hash,webpages_Membership.PasswordSalt as Salt   FROM UserProfile INNER JOIN webpages_Membership ON  UserProfile.UserId = webpages_Membership.UserId WHERE UserProfile.UserName = '" + username + "'").ToList();
+            
+            var sql = " SELECT "
+                        + " UserProfile.UserName, "
+                        + " webpages_Membership.Password as Hash "
+                        + " ,webpages_Membership.PasswordSalt as Salt "
+                        + " FROM UserProfile "
+                        + " INNER JOIN webpages_Membership  UserProfile.UserId = webpages_Membership.UserId "
+                        + " WHERE UserProfile.UserName =@userName ";
 
-            if (userList.Count == 1)
-                return userList.First();
-            else
-                return null;
+            var user = _db.Query<User>(sql, new { username }).FirstOrDefault();
+
+            return user;
         }
 
 

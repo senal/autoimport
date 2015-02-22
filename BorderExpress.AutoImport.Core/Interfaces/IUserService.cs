@@ -9,8 +9,8 @@ namespace BorderExpress.AutoImport.Core.Interfaces
 {
     public interface IUserService
     {
-        User GetUser(string username);
-       
+       bool ValidateUser(string userName, string password);
+
         //this is for test
         string Print();
     }

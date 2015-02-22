@@ -16,21 +16,21 @@ namespace BorderExpress.AutoImport.Core
     {
         private readonly IUserRepository _userRepository;
         private readonly IProjectConfiguration _config;
+        private readonly ISaltedHashManager _saltManager;
 
-        public UserService(IUserRepository userRepository, IProjectConfiguration config)
+        public UserService(IUserRepository userRepository, IProjectConfiguration config, ISaltedHashManager saltManager)
         {
             if (userRepository == null)
                 throw new ArgumentNullException("userRepository");
             if (config == null)
                 throw new ArgumentNullException("config");
+            if (saltManager == null)
+                throw new ArgumentNullException("saltManager");
 
-            _config = config;
             _userRepository = userRepository;
-        }
-
-        public User GetUser(string username)
-        {
-            return _userRepository.GetUser(username);
+             _config = config;
+             _saltManager = saltManager;
+            
         }
 
         public string Print()
@@ -43,6 +43,27 @@ namespace BorderExpress.AutoImport.Core
             sb.Append(string.Format(" and the config also {0}", _userRepository.Print()));
 
             return sb.ToString();
+        }
+
+
+        public bool ValidateUser(string userName, string password)
+        {
+            //if (user != null && SaltedHash.Verify(user.Salt, user.Hash, password))
+            // {
+            //       return true;
+            //}
+
+            if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(password))
+                return false;
+       
+            var user = _userRepository.GetUser(userName);
+            if (user == null)
+                return false;
+
+            if (!_saltManager.Verify(user.Salt, user.Hash, password))
+                return false;
+
+            return true;           
         }
     }
 }

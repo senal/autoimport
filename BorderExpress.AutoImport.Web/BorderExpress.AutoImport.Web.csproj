@@ -224,14 +224,15 @@
     <Compile Include="Infrastructure\WindsorConfigInstaller.cs" />
     <Compile Include="Infrastructure\WindsorControllInstaller.cs" />
     <Compile Include="Infrastructure\IApplicationIoc.cs" />
-    <Compile Include="Infrastructure\WindsorBootstrapContainer.cs" />
     <Compile Include="Infrastructure\WindsorControllerFactory.cs" />
     <Compile Include="Infrastructure\WindsorMembershipInstaller.cs" />
     <Compile Include="Infrastructure\WindsorRepositoryInstaller.cs" />
     <Compile Include="Infrastructure\WindsorServiceInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AutoImportMembershipProvider.cs" />
     <Compile Include="Security\CustomMembershipProvider.cs" />
     <Compile Include="Security\CustomRoleProvider.cs" />
+    <Compile Include="Security\MembershipProviderAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

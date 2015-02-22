@@ -11,23 +11,23 @@ using System;
 namespace BorderExpress.AutoImport.Tests.UnitTests
 {
     [TestFixture]
-    public class ConfigurationSetupServiceTest
+    public class ConfigurationParamServiceTests
     {
-        private IConfigurationSetupService _configurationSetupService;
-        private Mock<IConfigurationSetupRepository> _mockRepository;
+        private IConfigurationParamService _configurationSetupService;
+        private Mock<IConfigurationParamRepository> _mockRepository;
 
         [SetUp]
         public void TestInit()
         {
-            _mockRepository = new Mock<IConfigurationSetupRepository>();
-            _configurationSetupService = new ConfigurationSetupService(_mockRepository.Object);
+            _mockRepository = new Mock<IConfigurationParamRepository>();
+            _configurationSetupService = new ConfigurationParamService(_mockRepository.Object);
         }
 
         [Test]
         public void GetAll_sShould_Return_A_List()
         {
             //Arrange
-            IList<ConfigurationSetup> ExpectedConfigurationSetupList = TestData.GetConfigurationSetupList();
+            IList<ConfigurationParam> ExpectedConfigurationSetupList = TestData.GetConfigurationSetupList();
            _mockRepository.Setup(a => a.GetAll()).Returns(ExpectedConfigurationSetupList);
 
             //Act
@@ -42,8 +42,8 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
         public void GetById_Should_Return_One()
         {
             //Arrange
-            ConfigurationSetup ExpectedConfigurationSetup = TestData.GetConfigurationSetup();
-            _mockRepository.Setup(a => a.GetById(1)).Returns(ExpectedConfigurationSetup);
+            ConfigurationParam ExpectedConfigurationSetup = TestData.GetConfigurationSetup();
+            _mockRepository.Setup(a => a.Get(1)).Returns(ExpectedConfigurationSetup);
 
             //Act
             var result = _configurationSetupService.GetById(1);
@@ -57,7 +57,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
         public void Create_Should_Call_RepositoryCreate_Method()
         {
             //Arrange
-            ConfigurationSetup ConfigurationSetupToCreated = TestData.GetConfigurationSetup();
+            ConfigurationParam ConfigurationSetupToCreated = TestData.GetConfigurationSetup();
             _mockRepository.Setup(a => a.Create(ConfigurationSetupToCreated)).Callback(() =>{});
 
             //Act
@@ -71,7 +71,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
         public void Edit_Should_Call_RepositoryEdit_Method()
         {
             //Arrange
-            ConfigurationSetup ConfigurationSetupToEdit = TestData.GetConfigurationSetup();
+            ConfigurationParam ConfigurationSetupToEdit = TestData.GetConfigurationSetup();
             _mockRepository.Setup(a => a.Edit(ConfigurationSetupToEdit)).Callback(() => { });
 
             //Act
@@ -98,7 +98,7 @@ namespace BorderExpress.AutoImport.Tests.UnitTests
         public void Delete_Should_Call_RepositoryDelete_Method()
         {
             //Arrange
-            ConfigurationSetup ConfigurationSetupToDelete = TestData.GetConfigurationSetup();
+            ConfigurationParam ConfigurationSetupToDelete = TestData.GetConfigurationSetup();
             _mockRepository.Setup(a => a.Delete(1)).Callback(() => { });
 
             //Act

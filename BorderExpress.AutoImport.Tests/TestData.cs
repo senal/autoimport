@@ -10,14 +10,14 @@ namespace BorderExpress.AutoImport.Tests
     public static class TestData
     {
 
-        public static IList<ConfigurationSetup> GetConfigurationSetupList()
+        public static IList<ConfigurationParam> GetConfigurationSetupList()
         {
-            ConfigurationSetup setup;
-            IList<ConfigurationSetup> ConfigurationSetupList = new List<ConfigurationSetup>();
+            ConfigurationParam setup;
+            IList<ConfigurationParam> ConfigurationSetupList = new List<ConfigurationParam>();
 
             for (int index = 0; index < 5; index++)
             {
-                setup = new ConfigurationSetup();
+                setup = new ConfigurationParam();
                 setup.Id = index + 1;
                 setup.fldDescription = "Description " + index;
                 setup.fldOptionName = "Option " + index;
@@ -29,9 +29,9 @@ namespace BorderExpress.AutoImport.Tests
             return ConfigurationSetupList;
         }
 
-        public static ConfigurationSetup GetConfigurationSetup()
+        public static ConfigurationParam GetConfigurationSetup()
         {
-            ConfigurationSetup setup = new ConfigurationSetup();
+            ConfigurationParam setup = new ConfigurationParam();
             setup.Id = 1;
             setup.fldDescription = "Description ";
             setup.fldOptionName = "Option ";
@@ -42,9 +42,9 @@ namespace BorderExpress.AutoImport.Tests
             return setup;
         }
 
-        public static ConfigurationSetup GetConfigurationSetupWithoutId()
+        public static ConfigurationParam GetConfigurationSetupWithoutId()
         {
-            ConfigurationSetup setup = new ConfigurationSetup();
+            ConfigurationParam setup = new ConfigurationParam();
             setup.fldDescription = "Description ";
             setup.fldOptionName = "Option ";
             setup.fldSetting = "Setting ";

@@ -12,34 +12,34 @@ using BorderExpress.AutoImport.Models;
 
 namespace BorderExpress.AutoImport.Core
 {
-    public class ConfigurationSetupService : IConfigurationSetupService
+    public class ConfigurationParamService : IConfigurationParamService
     {
-        private readonly IConfigurationSetupRepository _configurationSetupRepository;
+        private readonly IConfigurationParamRepository _configurationSetupRepository;
 
-        public ConfigurationSetupService(IConfigurationSetupRepository configurationSetupRepository)
+        public ConfigurationParamService(IConfigurationParamRepository configurationSetupRepository)
         {
              IProjectConfiguration projectConfiguration = new ProjectConfiguration();
             _configurationSetupRepository = configurationSetupRepository; // new ConfigurationSetupRepository(projectConfiguration);
         }
 
-        public IList<ConfigurationSetup> GetAll()
+        public IList<ConfigurationParam> GetAll()
         {
-           IList<ConfigurationSetup> configurationSetupList = _configurationSetupRepository.GetAll();
+            IList<ConfigurationParam> configurationSetupList = _configurationSetupRepository.GetAll();
            return configurationSetupList;
         }
 
-        public ConfigurationSetup GetById(int id)
+        public ConfigurationParam GetById(int id)
         {
-            ConfigurationSetup configurationSetup = _configurationSetupRepository.GetById(id);
+            ConfigurationParam configurationSetup = _configurationSetupRepository.Get(id);
             return configurationSetup;
         }
 
-        public void Create(ConfigurationSetup configurationSetup)
+        public void Create(ConfigurationParam configurationSetup)
         {
             _configurationSetupRepository.Create(configurationSetup);
         }
 
-        public void Edit(ConfigurationSetup configurationSetup)
+        public void Edit(ConfigurationParam configurationSetup)
         {
             _configurationSetupRepository.Edit(configurationSetup);
         }
@@ -49,7 +49,7 @@ namespace BorderExpress.AutoImport.Core
             _configurationSetupRepository.Delete(id);
         }
 
-        public void Delete(ConfigurationSetup configurationSetup)
+        public void Delete(ConfigurationParam configurationSetup)
         {
             _configurationSetupRepository.Delete(configurationSetup.Id);
         }

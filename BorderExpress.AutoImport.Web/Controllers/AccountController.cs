@@ -19,13 +19,13 @@ namespace BorderExpress.AutoImport.Web.Controllers
             _userService = userService;
         }
         
-        /*
+        
          [AllowAnonymous]
         public void Print()
         {
             HttpContext.Response.Write(_userService.Print());
         }
-        */
+        
 
          //
          // GET: /Account/Login

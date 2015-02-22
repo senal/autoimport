@@ -1,27 +1,26 @@
-﻿using BorderExpress.AutoImport.Common;
-using BorderExpress.AutoImport.Core;
-using BorderExpress.AutoImport.Core.Interfaces;
+﻿using BorderExpress.AutoImport.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Web;
+using System.Web.Security;
 using WebMatrix.WebData;
 
 namespace BorderExpress.AutoImport.Web.Security
 {
-    public class CustomMembershipProvider : ExtendedMembershipProvider
+    public class AutoImportMembershipProvider : ExtendedMembershipProvider
     {
-
         private readonly IUserService _userService;
-
-        public CustomMembershipProvider(IUserService userService)
+        public AutoImportMembershipProvider(IUserService userService)
         {
             if (userService == null)
+            {
                 throw new ArgumentNullException("userService");
+            }
             _userService = userService;
         }
+
+
 
         public override bool ConfirmAccount(string accountConfirmationToken)
         {
@@ -115,7 +114,7 @@ namespace BorderExpress.AutoImport.Web.Security
             throw new NotImplementedException();
         }
 
-        public override System.Web.Security.MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out System.Web.Security.MembershipCreateStatus status)
+        public override MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out MembershipCreateStatus status)
         {
             throw new NotImplementedException();
         }
@@ -135,17 +134,17 @@ namespace BorderExpress.AutoImport.Web.Security
             get { throw new NotImplementedException(); }
         }
 
-        public override System.Web.Security.MembershipUserCollection FindUsersByEmail(string emailToMatch, int pageIndex, int pageSize, out int totalRecords)
+        public override MembershipUserCollection FindUsersByEmail(string emailToMatch, int pageIndex, int pageSize, out int totalRecords)
         {
             throw new NotImplementedException();
         }
 
-        public override System.Web.Security.MembershipUserCollection FindUsersByName(string usernameToMatch, int pageIndex, int pageSize, out int totalRecords)
+        public override MembershipUserCollection FindUsersByName(string usernameToMatch, int pageIndex, int pageSize, out int totalRecords)
         {
             throw new NotImplementedException();
         }
 
-        public override System.Web.Security.MembershipUserCollection GetAllUsers(int pageIndex, int pageSize, out int totalRecords)
+        public override MembershipUserCollection GetAllUsers(int pageIndex, int pageSize, out int totalRecords)
         {
             throw new NotImplementedException();
         }
@@ -160,12 +159,12 @@ namespace BorderExpress.AutoImport.Web.Security
             throw new NotImplementedException();
         }
 
-        public override System.Web.Security.MembershipUser GetUser(string username, bool userIsOnline)
+        public override MembershipUser GetUser(string username, bool userIsOnline)
         {
             throw new NotImplementedException();
         }
 
-        public override System.Web.Security.MembershipUser GetUser(object providerUserKey, bool userIsOnline)
+        public override MembershipUser GetUser(object providerUserKey, bool userIsOnline)
         {
             throw new NotImplementedException();
         }
@@ -195,7 +194,7 @@ namespace BorderExpress.AutoImport.Web.Security
             get { throw new NotImplementedException(); }
         }
 
-        public override System.Web.Security.MembershipPasswordFormat PasswordFormat
+        public override MembershipPasswordFormat PasswordFormat
         {
             get { throw new NotImplementedException(); }
         }
@@ -225,22 +224,14 @@ namespace BorderExpress.AutoImport.Web.Security
             throw new NotImplementedException();
         }
 
-        public override void UpdateUser(System.Web.Security.MembershipUser user)
+        public override void UpdateUser(MembershipUser user)
         {
             throw new NotImplementedException();
         }
 
         public override bool ValidateUser(string username, string password)
         {
-            /*
-            var user = _userService.GetUser(username);
-
-            if (user != null && SaltedHash.Verify(user.Salt, user.Hash, password))
-            {
-                return true;
-            }
-            */
-            return false;            
+            return _userService.ValidateUser(username, password);
         }
     }
 }

@@ -15,7 +15,9 @@ namespace BorderExpress.AutoImport.Web.Infrastructure
         {
            
             container.Register(
-               Component.For<CustomMembershipProvider>()
+               Component.For<AutoImportMembershipProvider>()
+               .LifestyleTransient()
+               .Named("AutoImportMemProvider")
                );
            
         }

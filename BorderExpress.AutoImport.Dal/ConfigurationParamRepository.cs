@@ -12,7 +12,7 @@ using Dapper;
 
 namespace BorderExpress.AutoImport.Dal
 {
-    public class ConfigurationSetupRepository : IConfigurationSetupRepository
+    public class ConfigurationParamRepository : IConfigurationParamRepository
     {
         private IDbConnection _db = new SqlConnection();
 
@@ -23,7 +23,7 @@ namespace BorderExpress.AutoImport.Dal
                 return _db;
             }
         }
-        public ConfigurationSetupRepository(IProjectConfiguration projectConfiguration)
+        public ConfigurationParamRepository(IProjectConfiguration projectConfiguration)
         {
             if (projectConfiguration == null)
                 throw new ArgumentNullException("ProjectConfiguration is null in " + this.GetType().Name);
@@ -31,22 +31,18 @@ namespace BorderExpress.AutoImport.Dal
             _db.ConnectionString = projectConfiguration.ConnectionString();
         }
 
-        public IList<ConfigurationSetup> GetAll()
+        public IList<ConfigurationParam> GetAll()
         {
             string query = "SELECT * FROM tblConfiguration";
-            IList<ConfigurationSetup> setupList =
-                this._db.Query<ConfigurationSetup>(query).ToList();
+            IList<ConfigurationParam> setupList =
+                this._db.Query<ConfigurationParam>(query).ToList();
 
             return setupList;
 
         }
 
-        public IQueryable<ConfigurationSetup> GetQueryable()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Create(ConfigurationSetup configurationSetup)
+        
+        public void Create(ConfigurationParam configurationSetup)
         {
             string query = "INSERT INTO [dbo].[tblConfiguration] ([fldOptionName] ,[fldSetting] ,[fldVersion] ,[fldDescription] ,[fldLastUpd])"
                            + "VALUES(@fldOptionName, @fldSetting, @fldVersion, @fldDescription, @fldLastUpd)";
@@ -60,7 +56,7 @@ namespace BorderExpress.AutoImport.Dal
             });
         }
 
-        public void Edit(ConfigurationSetup configurationSetup)
+        public void Edit(ConfigurationParam configurationSetup)
         {
             string query = "UPDATE [dbo].[tblConfiguration] ([fldOptionName] = @fldOptionName,[fldSetting] = @fldSetting," +
                            "[fldVersion] =  @fldVersion ,[fldDescription]  = @fldDescription ,[fldLastUpd] =  @fldLastUpd"
@@ -84,13 +80,19 @@ namespace BorderExpress.AutoImport.Dal
         }
 
 
-        public ConfigurationSetup GetById(int id)
+        public ConfigurationParam GetById(int id)
         {
             string query = "SELECT * FROM tblConfiguration WHERE id = " + id;
-            ConfigurationSetup configurationSetup =
-                this._db.Query<ConfigurationSetup>(query).Single();
+            ConfigurationParam configurationSetup =
+                this._db.Query<ConfigurationParam>(query).Single();
 
             return configurationSetup;
+        }
+
+
+        public ConfigurationParam Get(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

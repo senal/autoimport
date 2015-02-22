@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BorderExpress.AutoImport.Models
 {
-    public class ConfigurationSetup
+    public class ConfigurationParam
     {
         public int Id { get; set; }
         public string fldOptionName { get; set; }
