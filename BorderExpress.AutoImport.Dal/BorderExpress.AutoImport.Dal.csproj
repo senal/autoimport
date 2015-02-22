@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckpointParamRepository.cs" />
     <Compile Include="ConfigurationParamRepository.cs" />
+    <Compile Include="Interfaces\ICheckpointParamRepository.cs" />
     <Compile Include="Interfaces\IConfigurationParamRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

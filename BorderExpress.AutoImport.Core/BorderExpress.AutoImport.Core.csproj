@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckpointParamService.cs" />
     <Compile Include="ConfigurationParamService.cs" />
+    <Compile Include="Interfaces\ICheckpointParamService.cs" />
     <Compile Include="Interfaces\IConfigurationParamService.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
