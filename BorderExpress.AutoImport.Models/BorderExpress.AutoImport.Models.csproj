@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="AccountModels.cs" />
     <Compile Include="CheckpointParam.cs" />
-    <Compile Include="ConfigurationParamModels.cs" />
+    <Compile Include="ConfigurationParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
